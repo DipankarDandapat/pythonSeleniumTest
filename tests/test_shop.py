@@ -1,8 +1,10 @@
 from page_objects.shop_page import ShopPage
 from selenium.common.exceptions import NoSuchElementException
-
+import allure
 
 class ShopTest(ShopPage):
+    @allure.description("validate shop pge functionality")
+    @allure.severity(severity_level="High")
     def test_search_products(self):
         # open page
         self.open_page()

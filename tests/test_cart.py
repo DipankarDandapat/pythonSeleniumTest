@@ -1,6 +1,7 @@
 import time
 from page_objects.cart_page import CartPage
 from selenium.webdriver.common.keys import Keys
+import allure
 
 class CartTest(CartPage):
 
@@ -8,6 +9,8 @@ class CartTest(CartPage):
         super().setUp()
         self.open("https://practice.automationbro.com/shop")
 
+    @allure.description("validate card functionality")
+    @allure.severity(severity_level="High")
     def test_add_to_cart(self):
         # add item to the cart
         self.click(self.converse_add_to_cart_btn)

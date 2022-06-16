@@ -1,5 +1,6 @@
 from seleniumbase import BaseCase
 
+
 class HomePage(BaseCase):
     logo_icon = ".custom-logo-link"
     get_started_btn = "#get-started"

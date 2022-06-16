@@ -1,5 +1,5 @@
 from page_objects.home_page import HomePage
-
+import allure
 
 class HomeTest(HomePage):
 
@@ -24,6 +24,8 @@ class HomeTest(HomePage):
 
         super().tearDown()
 
+    @allure.description("validate home functionality")
+    @allure.severity(severity_level="low")
     def test_home_page(self):
         # assert page title
         self.assert_title("Practice E-Commerce Site – Automation Bro")
@@ -44,6 +46,8 @@ class HomeTest(HomePage):
         self.scroll_to_bottom()
         self.assert_text("Copyright © 2021 Automation Bro", HomePage.copyright_text)
 
+    @allure.description("validate menu link functionality")
+    @allure.severity(severity_level="High")
     def test_menu_links(self):
         expected_links = ['Home', 'About', 'Shop', 'Blog', 'Contact', 'My account']
 

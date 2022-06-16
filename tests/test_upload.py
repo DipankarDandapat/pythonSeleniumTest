@@ -1,6 +1,9 @@
 from seleniumbase import BaseCase
-
+import allure
 class UploadTest(BaseCase):
+
+    @allure.description("validate visible functionality")
+    @allure.severity(severity_level="Low")
     def test_visible_upload(self):
         # open page
         self.open("https://the-internet.herokuapp.com/upload")
@@ -17,7 +20,8 @@ class UploadTest(BaseCase):
         # assert file uploaded text
         self.assert_text("File Uploaded!", "h3")
 
-
+    @allure.description("validate hidden functionality")
+    @allure.severity(severity_level="Medium")
     def test_hidden_upload(self):
         # open page
         self.open("https://practice.automationbro.com/cart/")

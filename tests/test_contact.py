@@ -1,8 +1,10 @@
 from seleniumbase import BaseCase
-
+import allure
 
 class ContactTest(BaseCase):
 
+    @allure.description("validate contract functionality")
+    @allure.severity(severity_level="High")
     def test_contact_page(self):
         # open page
         self.open("https://practice.automationbro.com/contact")
